@@ -7,13 +7,12 @@ public class UIManager : MonoBehaviour
 {
     public Sprite[] lives;
     public Image livesImageDisplay;
-    public GameObject titleScreen;
     public GameObject playButton;
+    public GameObject playerLives;
     public GameObject instructionButton;
     public GameObject instructionPanel;
     public GameObject instructionPanelCancel;
     public GameObject scoreTextMesh;
-    //public GameObject shoot;
 
     public Text scoreText; 
     public int score;
@@ -31,7 +30,7 @@ public class UIManager : MonoBehaviour
     public void ShowTitleScreen()
     {
         scoreTextMesh.SetActive(false);
-        titleScreen.SetActive(true);
+        playerLives.SetActive(false);
         playButton.SetActive(true);
         instructionButton.SetActive(true);
         instructionPanel.SetActive(false);
@@ -40,7 +39,7 @@ public class UIManager : MonoBehaviour
     public void HideTitleScreen()
     {
         scoreTextMesh.SetActive(true);
-        titleScreen.SetActive(false);
+        playerLives .SetActive(true);
         playButton.SetActive(false);
         instructionButton.SetActive(false);
         instructionPanel.SetActive(false);
@@ -49,15 +48,12 @@ public class UIManager : MonoBehaviour
 
     public void OnClickInstructions()
     {
-        //main menu close
-        titleScreen.SetActive(false);
         playButton.SetActive(false);
         instructionButton.SetActive(false);
         instructionPanel.SetActive(true);
     }
     public void OnClickCancelInstructions()
     {
-        titleScreen.SetActive(true);
         playButton.SetActive(true);
         instructionButton.SetActive(true);
         instructionPanel.SetActive(false);
